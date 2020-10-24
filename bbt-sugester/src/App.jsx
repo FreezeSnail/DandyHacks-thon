@@ -1,15 +1,11 @@
 import './App.css';
-import { DropDownComp } from './frontend/components/dropDownComp'
-import { WeatherComp } from './frontend/components/weatherComp'
+import { Selector } from './frontend/components/selector'
+
 import './styles.sass';
 
 function App() {
   return (
-    <div className="body">
-      <DropDownComp />
-      <WeatherComp />
-
-    </div>
+    <Selector />
   );
 }
 

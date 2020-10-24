@@ -2,18 +2,14 @@ import React from 'react';
 import './components.sass';
 
 export class DropDownComp extends React.Component {
-    state = {
-        mood: "",
-        options: [
-            "happy",
-            "sad",
-            
-        ],
-    };
+    
+    constructor(props) {
+        super(props);
+    }
 
     genDropDownOptions() {
-        let options = this.state.options.map(function (mood, i) {
-             return <option key={i}>{mood}</option>
+        let options = this.props.moodProps.options.map(function (mood, i) {
+             return <option key={i} selected={mood}>{mood}</option>
         }) 
 
         return options;
@@ -21,17 +17,14 @@ export class DropDownComp extends React.Component {
         
     }
 
-    change(event) {
-        this.setState({mood: event.target.value});
-        console.log("current selected mood: ", this.state.mood);
-    }
-
     render() {
         return (
             <div>
                 <div class="zipcodeBox">
                     <label for="mood">Choose Mood </label>
-                    <select name="mood" id="mood" onChange={this.change.bind(this)} className="zipcodeBox">
+                    <select name="mood" id="mood" onChange={this.props.updateMood} 
+                    className="zipcodeBox">
+                        <option key='0'>choose a mood </option>
                         {this.genDropDownOptions()}
                     </select>
                 </div>

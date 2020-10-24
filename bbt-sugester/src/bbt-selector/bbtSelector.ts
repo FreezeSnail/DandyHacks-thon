@@ -32,6 +32,9 @@ class BBT {
 
     }
 }
+function pickMilk(): boolean {
+    return getRandomInt(2) === 1;
+}
 
 function pickBase() : string {
     return bases[getRandomInt(bases.length)];
@@ -42,16 +45,17 @@ function pickFlavor(): string {
 }
 
 function pickTopping(): string { 
-   return toppings[getRandomInt(toppings.length)];
+   return toppings[getRandomInt(toppings.length-1)+1] ;
 }
 
 export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.
     //eventually theres going to need to be some kind of logic here
 
+    let milk: boolean = pickMilk();
     let base: string = pickBase();
     let flavor: string = pickFlavor();
     let topping: string = pickTopping()
-    let newBBT = new BBT(true, base, flavor, topping);
+    let newBBT = new BBT(milk, base, flavor, topping);
 
 
     return newBBT;

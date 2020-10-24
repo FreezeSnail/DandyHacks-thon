@@ -2,22 +2,10 @@ import React from 'react';
 import { genBBT, BBT } from "../../bbt-selector/bbtSelector";
 
 export class BBTComp extends React.Component {
-    state = {
-        currentBBT: null,
-        bbtPresented: false,
-    };
-
-    findBBT() {
-        console.log("finding bbt")
-
-        let bbt = genBBT();
-
-        this.setState({currentBBT: bbt});
-        this.setState({bbtPresented: true})
-    }
+    
 
     drawBBT() {
-        let bbt = this.state.currentBBT;
+        let bbt = this.props.BBTProps.currentBBT;
         return (
             <div>
                 <div>
@@ -37,7 +25,7 @@ export class BBTComp extends React.Component {
     }
 
     render() {
-        let presented = this.state.bbtPresented;
+        let presented = this.props.BBTProps.bbtPresented;
 
         let render = (<div></div>);
         if(!presented) {
@@ -45,13 +33,20 @@ export class BBTComp extends React.Component {
                 <div>
                     You havent Chosen a bbt
                     <div>
-                        <button onClick={this.findBBT.bind(this)}>Find your BBT</button>
+                        <button onClick={this.props.findBBT}>Find your BBT</button>
                     </div>
                 </div>  
             )
         }
             else {
-                render = this.drawBBT();
+                render = (
+                    <div>
+                        {this.drawBBT()}
+                        <div>
+                        <button onClick={this.props.findBBT}>Find another BBT</button>
+                    </div>
+                    </div>
+                );
             }
 
         return (

@@ -33,22 +33,26 @@ class BBT {
     }
 }
 function pickMilk(): boolean {
+    //this should not be random since its based off the lactoseIntolerant question
     return getRandomInt(2) === 1;
 }
 
 function pickBase() : string {
-    return bases[getRandomInt(bases.length)];
+    const randomBase = Math.floor(Math.random() * bases.length);
+    return randomBase;
+    //return bases[getRandomInt(bases.length)];
 }
 
 function pickFlavor(): string {
-    const random = Math.floor(Math.random() * flavors.length);
-    return random; //would this work?
-    
-   // return flavors[getRandomInt(flavors.length)];
+    const randomFlavor = Math.floor(Math.random() * flavors.length);
+    return randomFlavor; //would this work?
+    //return flavors[getRandomInt(flavors.length)];
 }
 
 function pickTopping(): string { 
-   return toppings[getRandomInt(toppings.length-1)+1] ;
+    const randomTopping = Math.floor(Math.random() * toppings.length);
+    return randomTopping;
+    //return toppings[getRandomInt(toppings.length-1)+1] ;
 }
 
 export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.

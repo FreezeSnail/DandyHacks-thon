@@ -41,7 +41,10 @@ function pickBase() : string {
 }
 
 function pickFlavor(): string {
-    return flavors[getRandomInt(flavors.length)];
+    const random = Math.floor(Math.random() * flavor.length);
+    return random; //would this work?
+    
+   // return flavors[getRandomInt(flavors.length)];
 }
 
 function pickTopping(): string { 

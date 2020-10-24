@@ -56,7 +56,6 @@ export class WeatherComp extends React.Component {
 
         return ( 
             <div>
-                Area
             {Render}
             {conditional}
             </div>

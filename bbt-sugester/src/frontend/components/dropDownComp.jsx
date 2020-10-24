@@ -1,4 +1,6 @@
 import React from 'react';
+import Select from 'react-select'
+import './components.sass';
 
 export class DropDownComp extends React.Component {
     state = {
@@ -28,10 +30,9 @@ export class DropDownComp extends React.Component {
     render() {
         return (
             <div>
-                <p>Options for mood</p>
-                <div>
+                <div class="zipcodeBox">
                     <label for="mood">Choose Mood </label>
-                    <select name="mood" id="mood" onChange={this.change.bind(this)} >
+                    <select name="mood" id="mood" onChange={this.change.bind(this)} className="zipcodeBox">
                         {this.genDropDownOptions()}
                     </select>
                 </div>

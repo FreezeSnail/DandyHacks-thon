@@ -1,5 +1,5 @@
 {
-    "milk": ["yes","no"],
+    "milk": [true,false],
     "base": ["oolong","white","black","green"],
     "flavors":["acai berry","blueberry","Cherry","Grapefruit","Guava","Green apple","Honey lemon","Honeydew","Honey ginger","Kiwi","Lavender","Lychee","Lemon","Mulberry","Mango","Orange","Papaye","Passionfruit","Pina colada","Peach","Pineapple","Pomegranate","Rose","Raspberry","Strawberry","White peach"],
     "toppings":["aloe","coconut jelly","orea crumbs","red bean","pearls","popping pearls"]

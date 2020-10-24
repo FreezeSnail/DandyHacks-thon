@@ -41,7 +41,7 @@ function pickBase() : string {
 }
 
 function pickFlavor(): string {
-    const random = Math.floor(Math.random() * flavor.length);
+    const random = Math.floor(Math.random() * flavors.length);
     return random; //would this work?
     
    // return flavors[getRandomInt(flavors.length)];

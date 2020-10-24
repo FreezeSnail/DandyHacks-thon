@@ -1,5 +1,4 @@
 import React from 'react';
-import Select from 'react-select'
 import './components.sass';
 
 export class DropDownComp extends React.Component {

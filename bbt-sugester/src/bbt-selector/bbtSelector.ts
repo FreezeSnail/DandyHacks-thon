@@ -45,7 +45,7 @@ function pickTopping(): string {
    return toppings[getRandomInt(toppings.length)];
 }
 
-export function genBBt(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.
+export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.
     //eventually theres going to need to be some kind of logic here
 
     let base: string = pickBase();

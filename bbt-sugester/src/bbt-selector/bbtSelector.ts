@@ -39,19 +39,19 @@ function pickMilk(): boolean {
 
 function pickBase() : string {
     const randomBase = Math.floor(Math.random() * bases.length);
-    return randomBase;
+    return randomBase.toString();
     //return bases[getRandomInt(bases.length)];
 }
 
 function pickFlavor(): string {
     const randomFlavor = Math.floor(Math.random() * flavors.length);
-    return randomFlavor; //would this work?
+    return randomFlavor.toString(); //would this work?
     //return flavors[getRandomInt(flavors.length)];
 }
 
 function pickTopping(): string { 
     const randomTopping = Math.floor(Math.random() * toppings.length);
-    return randomTopping;
+    return randomTopping.toString();
     //return toppings[getRandomInt(toppings.length-1)+1] ;
 }
 

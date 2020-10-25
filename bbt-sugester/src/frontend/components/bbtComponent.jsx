@@ -45,8 +45,8 @@ export class BBTComp extends React.Component {
                     <div>
                         {this.drawBBT()}
                         <div>
-                        <button onClick={this.props.findBBT}>Generate another BBT!</button>
-                    </div>
+                            <button onClick={this.props.findBBT}>Generate another BBT!</button>
+                        </div>
                     </div>
                 );
             }

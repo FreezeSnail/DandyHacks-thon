@@ -3,6 +3,7 @@ import { tempuratureIndex, weatherType } from "./bbtOptionEnums"
 const bases: string[] = ["oolong", "white", "black", "green"];
 const flavors: string[] = ["acai berry", "blueberry", "Cherry", "Grapefruit", "Guava", "Green apple", "Honey lemon", "Honeydew", "Honey ginger", "Kiwi", "Lavender", "Lychee", "Lemon", "Mulberry", "Mango", "Orange", "Papaye", "Passionfruit", "Pina colada", "Peach", "Pineapple", "Pomegranate", "Rose", "Raspberry", "Strawberry", "White peach"];
 const toppings: string[] = ["none", "aloe", "coconut jelly", "orea crumbs", "red bean", "pearls", "popping pearls"];
+const weathers: string[] = ["clear", "sunny", "foggy", "cloudy",  "rainy", "stormy", "tornadoes", "thunderstorms", "sandstorms", "windy", "hail", "snowy"];
 
 interface Bbt {
     milk: boolean;

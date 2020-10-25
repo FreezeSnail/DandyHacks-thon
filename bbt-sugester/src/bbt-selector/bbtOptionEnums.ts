@@ -1,8 +1,31 @@
 export enum moods {
-    happy, 
+    happy,
+    cheerful,
+    excited,
+    energetic,
+    accomplished,
+    blissful,
+    loving,
+    optimistic,
+    proud,
+    calm,
+    relaxed,
+    hopeful,
+    terrified,
+    hungry,
     sad,
     mad,
-    envious, //ect
+    envious,
+    exhausted,  
+    cranky, 
+    angry,
+    shocked,
+    moody,
+    drained,
+    annoyed,
+    discouraged,
+    overwhelmed,
+    suspicious,
 }
 
 export enum tempuratureIndex {
@@ -14,12 +37,16 @@ export enum tempuratureIndex {
 }
 
 export enum weatherType {
+    clear,
     sunny,
+    foggy,
     cloudy,
-    rain,
-    snow,
-    //ect
-
-    //default type incase api connect doesnt cover them all
-    unknown
+    rainy,
+    stormy,
+    tornadoes,
+    thunderstorms,
+    sandstorms,
+    windy,
+    hail,
+    snowy,
 }

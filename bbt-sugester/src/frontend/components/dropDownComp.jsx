@@ -15,14 +15,6 @@ export class DropDownComp extends React.Component {
         return options;
     }
 
-    genDropDownOptionsWeather() {
-        let options = this.props.weatherProps.options.map(function (weather, i) {
-             return <option key={i} selected={weather}>{weather}</option>
-        }) 
-
-        return options;
-    }
-
     render() {
         return (   
             <div>
@@ -39,17 +31,7 @@ export class DropDownComp extends React.Component {
                             {this.genDropDownOptionsMood()}
                     </select>
                 </div>
-                <div class="weatherBox">
-                    <label for="weather"> Select current weather: </label>
-                    <select 
-                        name="weather" 
-                        id="weather"
-                        onChange={this.props.updateWeather} 
-                        className="weatherBox">
-                            <option key='0'>   </option>
-                            {this.genDropDownOptionsWeather()}
-                    </select>
-                </div>
+                
             </div>
         );
     }

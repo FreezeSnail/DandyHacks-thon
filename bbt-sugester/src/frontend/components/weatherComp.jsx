@@ -1,4 +1,5 @@
 import React from 'react';
+import './components.sass';
 
 export class WeatherComp extends React.Component {
     
@@ -6,44 +7,29 @@ export class WeatherComp extends React.Component {
         super(props);
     }
 
-    
-    render() {
-        /*
-        console.log(this.props);
-        const choseArea = this.props.weatherProps.areaChosen;
+    genDropDownOptionsWeather() {
+        let options = this.props.weatherProps.options.map(function (weather, i) {
+             return <option key={i} selected={weather}>{weather}</option>
+        }) 
 
-        let Render = (
-            <div> 
-                <div>
-                    Enter your zipcode:
-                    <input type="number" pattern="^[0-9]{5}$" id="zipcode" 
-                    onInput={this.props.updateLocation}/>
+        return options;
+    }
+
+     render() {
+        return (   
+            <div>
+                <div class="weatherBox">
+                    <label for="weather"> Select current weather: </label>
+                    <select 
+                        name="weather" 
+                        id="weather"
+                        onChange={this.props.updateWeather} 
+                        className="weatherBox">
+                            <option key='0'>   </option>
+                            {this.genDropDownOptionsWeather()}
+                    </select>
                 </div>
             </div>
-            );
-
-            let conditional;
-
-            if(choseArea) {
-                conditional = (
-                    <div>
-                        <h5> area successfully found </h5>
-                    </div>
-                );
-
-            } else {
-                <div>
-                    cannot determine the area.
-                </div>
-            }
-
-            return ( 
-                <div>
-                {Render}
-                {conditional}
-                </div>
-            );*/
-            return;
-        
+        );
     }
 }

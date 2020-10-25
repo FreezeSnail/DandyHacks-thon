@@ -42,7 +42,6 @@ export class Selector extends React.Component {
         this.setState({bbtPresented: true})
     }
 
-    change
     updateLocation(evt) {
         //call the weather api and do stuff
         //console.log("parent updating loc");

@@ -4,13 +4,15 @@ import { genBBT, BBT } from "../../bbt-selector/bbtSelector";
 export class BBTComp extends React.Component {
     
 
-    drawBBT() {
+    drawBBT(d) {
+        
         let bbt = this.props.BBTProps.currentBBT;
-        var date = new Date().toLocaleString();
+        var date = new Date();
+        var str = date.getMilliseconds();
         return (
             //fix the milk part, checkbox for milk/no milk?
             <div>
-                <p>Your drink today ({date}) is: </p> 
+                <p>Your unique drink today at this time ({date.toLocaleString()} at {str} milliseconds) is: </p> 
                 <div>
                    <p> {bbt.milk ? "milk" : "no milk"}</p>
                 </div>
@@ -26,6 +28,8 @@ export class BBTComp extends React.Component {
             </div>
         )
     }
+
+    
 
     render() {
         let presented = this.props.BBTProps.bbtPresented;

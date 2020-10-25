@@ -94,7 +94,7 @@ export class Selector extends React.Component {
           moodProps={this.state.moodState}
           updateMood={this.updateMood.bind(this)} value={this.state.mood}
         />
-        <DropDownComp
+        <WeatherComp
           weatherProps={this.state.weatherState}
           updateWeather={this.updateWeather.bind(this)} value = {this.state.weather}
         />

@@ -36,7 +36,7 @@ export class WeatherComp extends React.Component {
                     //defualt
                     
 
-            }
+                }
 
         return ( 
             <div>

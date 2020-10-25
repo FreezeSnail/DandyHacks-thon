@@ -39,20 +39,17 @@ function pickMilk(): boolean {
 
 function pickBase() : string {
     const randomBase = Math.floor(Math.random() * bases.length);
-    return randomBase.toString();
-    //return bases[getRandomInt(bases.length)];
+    return bases[getRandomInt(bases.length)].toString();
 }
 
 function pickFlavor(): string {
     const randomFlavor = Math.floor(Math.random() * flavors.length);
-    return randomFlavor.toString(); //would this work?
-    //return flavors[getRandomInt(flavors.length)];
+    return flavors[getRandomInt(flavors.length)].toString();
 }
 
 function pickTopping(): string { 
     const randomTopping = Math.floor(Math.random() * toppings.length);
-    return randomTopping.toString();
-    //return toppings[getRandomInt(toppings.length-1)+1] ;
+    return toppings[getRandomInt(toppings.length-1)+1].toString() ;
 }
 
 export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.

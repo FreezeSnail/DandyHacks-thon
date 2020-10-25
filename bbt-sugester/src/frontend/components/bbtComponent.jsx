@@ -6,10 +6,11 @@ export class BBTComp extends React.Component {
 
     drawBBT() {
         let bbt = this.props.BBTProps.currentBBT;
+        var date = new Date().toLocaleString();
         return (
             //fix the milk part, checkbox for milk/no milk?
             <div>
-                <p>Your drink today is: </p> 
+                <p>Your drink today ({date}) is: </p> 
                 <div>
                    <p> {bbt.milk ? "milk" : "no milk"}</p>
                 </div>

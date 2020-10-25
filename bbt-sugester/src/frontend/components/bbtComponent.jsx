@@ -7,18 +7,20 @@ export class BBTComp extends React.Component {
     drawBBT() {
         let bbt = this.props.BBTProps.currentBBT;
         return (
+            //fix the milk part, checkbox for milk/no milk?
             <div>
+                <p>Your drink today is: </p> 
                 <div>
-                    {bbt.milk ? "milk" : "no milk"}
+                   <p> {bbt.milk ? "milk" : "no milk"}</p>
                 </div>
                 <div>
-                    base: {bbt.base}
+                    <p> base:  {bbt.base} </p>
                 </div>
                 <div>
-                    flavor: {bbt.flavor}
+                     <p>flavor: {bbt.flavor} </p>
                 </div>
                 <div>
-                    topping: {bbt.topping}
+                    <p>topping: {bbt.topping}</p>
                 </div>
             </div>
         )
@@ -33,7 +35,7 @@ export class BBTComp extends React.Component {
                 <div>
                     You havent Chosen a bbt
                     <div>
-                        <button onClick={this.props.findBBT}>Find your BBT</button>
+                        <button onClick={this.props.findBBT}>Generate your random BBT!</button>
                     </div>
                 </div>  
             )
@@ -43,7 +45,7 @@ export class BBTComp extends React.Component {
                     <div>
                         {this.drawBBT()}
                         <div>
-                        <button onClick={this.props.findBBT}>Find another BBT</button>
+                        <button onClick={this.props.findBBT}>Generate another BBT!</button>
                     </div>
                     </div>
                 );

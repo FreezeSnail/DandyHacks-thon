@@ -16,18 +16,18 @@ export class DropDownComp extends React.Component {
     }
 
     render() {
-        return (
+        return (   
             <div>
+                <h1>Welcome To Bubble Tea Randomizer!</h1>
+                <h4>You can either generate a random bubble tea flavor based on your mood, the weather, or just random! </h4>
                 <div class="zipcodeBox">
-                    <label for="mood">Choose Mood </label>
+                    <label for="mood"> Select your mood: </label>
                     <select 
                         name="mood" 
                         id="mood" 
                         onChange={this.props.updateMood} 
                         className="zipcodeBox">
-                            <option key='0'>
-                                choose a mood 
-                            </option>
+                            <option key='0'>   </option>
                             {this.genDropDownOptions()}
                     </select>
                 </div>

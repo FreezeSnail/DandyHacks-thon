@@ -14,12 +14,9 @@ export class WeatherComp extends React.Component {
         let Render = (
             <div> 
                 <div>
-                    Enter your zipcode
-                </div>
-                <div>
+                    Enter your zipcode:
                     <input type="number" pattern="^[0-9]{5}$" id="zipcode" 
                     onInput={this.props.updateLocation}/>
-
                 </div>
             </div>
             );
@@ -29,7 +26,7 @@ export class WeatherComp extends React.Component {
             if(choseArea) {
                 conditional = (
                     <div>
-                        area selected
+                        <h5> area successfully found </h5>
                     </div>
                 );
 

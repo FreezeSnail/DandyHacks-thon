@@ -13,8 +13,6 @@ export class DropDownComp extends React.Component {
         }) 
 
         return options;
-
-        
     }
 
     render() {
@@ -22,10 +20,15 @@ export class DropDownComp extends React.Component {
             <div>
                 <div class="zipcodeBox">
                     <label for="mood">Choose Mood </label>
-                    <select name="mood" id="mood" onChange={this.props.updateMood} 
-                    className="zipcodeBox">
-                        <option key='0'>choose a mood </option>
-                        {this.genDropDownOptions()}
+                    <select 
+                        name="mood" 
+                        id="mood" 
+                        onChange={this.props.updateMood} 
+                        className="zipcodeBox">
+                            <option key='0'>
+                                choose a mood 
+                            </option>
+                            {this.genDropDownOptions()}
                     </select>
                 </div>
             </div>

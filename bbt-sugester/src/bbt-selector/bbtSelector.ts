@@ -29,7 +29,7 @@ class BBT {
         this.base = base;
         this.flavor = flavor;
         this.topping = topping || "none";
-
+ 
     }
 }
 function pickMilk(): boolean {
@@ -41,21 +41,6 @@ function pickRandom(arr: string[]) : string {
     const randomChooser = Math.floor(Math.random() * arr.length);
     return arr[getRandomInt(arr.length)].toString();
 
-}
-
-function pickBase() : string {
-    const randomBase = Math.floor(Math.random() * bases.length);
-    return bases[getRandomInt(bases.length)].toString();
-}
-
-function pickFlavor(): string {
-    const randomFlavor = Math.floor(Math.random() * flavors.length);
-    return flavors[getRandomInt(flavors.length)].toString();
-}
-
-function pickTopping(): string { 
-    const randomTopping = Math.floor(Math.random() * toppings.length);
-    return toppings[getRandomInt(toppings.length-1)+1].toString() ;
 }
 
 export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   

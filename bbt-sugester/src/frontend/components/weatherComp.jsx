@@ -6,8 +6,9 @@ export class WeatherComp extends React.Component {
         super(props);
     }
 
-
+    
     render() {
+        /*
         console.log(this.props);
         const choseArea = this.props.weatherProps.areaChosen;
 
@@ -41,6 +42,8 @@ export class WeatherComp extends React.Component {
                 {Render}
                 {conditional}
                 </div>
-            );
+            );*/
+            return;
+        
     }
 }

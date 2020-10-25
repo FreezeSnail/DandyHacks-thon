@@ -7,9 +7,17 @@ export class DropDownComp extends React.Component {
         super(props);
     }
 
-    genDropDownOptions() {
+    genDropDownOptionsMood() {
         let options = this.props.moodProps.options.map(function (mood, i) {
              return <option key={i} selected={mood}>{mood}</option>
+        }) 
+
+        return options;
+    }
+
+    genDropDownOptionsWeather() {
+        let options = this.props.weatherProps.options.map(function (weather, i) {
+             return <option key={i} selected={weather}>{weather}</option>
         }) 
 
         return options;
@@ -28,7 +36,18 @@ export class DropDownComp extends React.Component {
                         onChange={this.props.updateMood} 
                         className="moodBox">
                             <option key='0'>   </option>
-                            {this.genDropDownOptions()}
+                            {this.genDropDownOptionsMood()}
+                    </select>
+                </div>
+                <div class="weatherBox">
+                    <label for="weather"> Select current weather: </label>
+                    <select 
+                        name="weather" 
+                        id="weather"
+                        onChange={this.props.updateWeather} 
+                        className="weatherBox">
+                            <option key='0'>   </option>
+                            {this.genDropDownOptionsWeather()}
                     </select>
                 </div>
             </div>

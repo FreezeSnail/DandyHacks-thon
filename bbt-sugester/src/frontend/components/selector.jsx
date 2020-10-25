@@ -5,108 +5,105 @@ import { DropDownComp } from './dropDownComp'
 import { WeatherComp } from './weatherComp'
 
 export class Selector extends React.Component {
-    state = {
-        weatherState : {
-            areaChosen: false,
-            zipcode: 0
-        },
-        moodState : {
-            mood: "noneT",
-            options: [
-                "happy",
-                "cheerful",
-                "excited",
-                "energetic",
-                "accomplished",
-                "blissful",
-                "loving",
-                "optimistic",
-                "proud",
-                "calm",
-                "relaxed",
-                "hopeful",
-                "terrified",
-                "hungry",
-                "sad",
-                "mad",
-                "envious",
-                "exhausted",  
-                "cranky", 
-                "angry",
-                "shocked",
-                "moody",
-                "drained",
-                "annoyed",
-                "discouraged",
-                "overwhelmed",
-                "suspicious",
-            ],
-        },
-        bbtState : {
-            currentBBT: null,
-            bbtPresented: false,
-        }
-    };
+  state = {
+    weatherState: {
+      weather: "noneT",
+      options: [
+        "clear",
+        "sunny",
+        "foggy",
+        "cloudy",
+        "rainy",
+        "stormy",
+        "tornadoes",
+        "thunderstorms",
+        "sandstorms",
+        "windy",
+        "hail",
+        "snowy",
+      ],
+    },
+    moodState: {
+      mood: "noneT",
+      options: [
+        "happy",
+        "cheerful",
+        "excited",
+        "energetic",
+        "accomplished",
+        "blissful",
+        "loving",
+        "optimistic",
+        "proud",
+        "calm",
+        "relaxed",
+        "hopeful",
+        "terrified",
+        "hungry",
+        "sad",
+        "mad",
+        "envious",
+        "exhausted",
+        "cranky",
+        "angry",
+        "shocked",
+        "moody",
+        "drained",
+        "annoyed",
+        "discouraged",
+        "overwhelmed",
+        "suspicious",
+      ],
+    },
+    bbtState: {
+      currentBBT: null,
+      bbtPresented: false,
+    },
+  };
 
-    updateMood(event) {
-        let mood = (event.target.value);
-        this.state.moodState.mood = mood;
-        this.setState({mood: mood});
+  updateMood(event) {
+    let mood = event.target.value;
+    this.state.moodState.mood = mood;
+    this.setState({ mood: mood });
 
-        console.log(this.state.moodState.mood);
-    }
+    console.log(this.state.moodState.mood);
+  }
 
-    findBBT() {
-        console.log("finding bbt")
+  updateWeather(evt) {
+    let weather = evt.target.value;
+    this.state.weatherState.weather = weather;
+    this.setState({ weather: weather });
 
-        let bbt = genBBT();
+    console.log(this.state.weatherState.weather);
+  }
 
-        this.state.bbtState.currentBBT = bbt;
-        this.state.bbtState.bbtPresented = true;
-        this.setState({bbtPresented: true})
-    }
+  findBBT() {
+    console.log("finding bbt");
 
-    updateLocation(evt) {
-        //call the weather api and do stuff
-        //console.log("parent updating loc");
-        const zip = evt.target.value;
-        if(zip.length === 5){
+    let bbt = genBBT();
 
+    this.state.bbtState.currentBBT = bbt;
+    this.state.bbtState.bbtPresented = true;
+    this.setState({ bbtPresented: true });
+  }
 
-            this.state.weatherState.zipcode =  zip;
-            this.state.weatherState.areaChosen = true;
+  render() {
+    return (
+      <div className="body">
+        <DropDownComp
+          moodProps={this.state.moodState}
+          updateMood={this.updateMood.bind(this)} value={this.state.mood}
+        />
+        <DropDownComp
+          weatherProps={this.state.weatherState}
+          updateWeather={this.updateWeather.bind(this)} value = {this.state.weather}
+        />
 
-            this.setState({zipcode: zip});
-            console.log("a zip");
-            console.log(this.state.zipcode);
-        }
-        else{
-
-            this.state.weatherState.zipcode =  0;
-            this.state.weatherState.areaChosen = false;
-
-            this.setState({zipcode: zip});
- 
-            console.log("not a zip");
-        }
-        
-    }
-
-    render() {
-        return (
-            <div className="body">
-                <DropDownComp 
-                    moodProps = {this.state.moodState} 
-                    updateMood={this.updateMood.bind(this)}/>
-                <WeatherComp 
-                    weatherProps={this.state.weatherState} 
-                    updateLocation={this.updateLocation.bind(this)}/>
-                <BBTComp 
-                    BBTProps={this.state.bbtState} 
-                    findBBT={this.findBBT.bind(this)}/>
-
-            </div>
-        );
-    }
-    
+        <BBTComp
+          BBTProps={this.state.bbtState}
+          findBBT={this.findBBT.bind(this)}
+        />
+      </div>
+    );
+  }
 }

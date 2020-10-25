@@ -1,8 +1,8 @@
 import { tempuratureIndex, weatherType } from "./bbtOptionEnums"
 
-const bases: string[] = ["oolong","white","black","green"];
-const flavors: string[] = ["acai berry","blueberry","Cherry","Grapefruit","Guava","Green apple","Honey lemon","Honeydew","Honey ginger","Kiwi","Lavender","Lychee","Lemon","Mulberry","Mango","Orange","Papaye","Passionfruit","Pina colada","Peach","Pineapple","Pomegranate","Rose","Raspberry","Strawberry","White peach"];
-const toppings: string[] = ["none", "aloe","coconut jelly","orea crumbs","red bean","pearls","popping pearls"];
+const bases: string[] = ["oolong", "white", "black", "green"];
+const flavors: string[] = ["acai berry", "blueberry", "Cherry", "Grapefruit", "Guava", "Green apple", "Honey lemon", "Honeydew", "Honey ginger", "Kiwi", "Lavender", "Lychee", "Lemon", "Mulberry", "Mango", "Orange", "Papaye", "Passionfruit", "Pina colada", "Peach", "Pineapple", "Pomegranate", "Rose", "Raspberry", "Strawberry", "White peach"];
+const toppings: string[] = ["none", "aloe", "coconut jelly", "orea crumbs", "red bean", "pearls", "popping pearls"];
 
 interface Bbt {
     milk: boolean;
@@ -37,6 +37,12 @@ function pickMilk(): boolean {
     return getRandomInt(2) === 1;
 }
 
+function pickRandom(arr: string[]) : string {
+    const randomChooser = Math.floor(Math.random() * arr.length);
+    return arr[getRandomInt(arr.length)].toString();
+
+}
+
 function pickBase() : string {
     const randomBase = Math.floor(Math.random() * bases.length);
     return bases[getRandomInt(bases.length)].toString();
@@ -52,13 +58,14 @@ function pickTopping(): string {
     return toppings[getRandomInt(toppings.length-1)+1].toString() ;
 }
 
-export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   // weather params, mood params, ect.
+export function genBBT(tempurature:tempuratureIndex, weather:weatherType ) : BBT{   
+    // weather params, mood params, ect.
     //eventually theres going to need to be some kind of logic here
 
     let milk: boolean = pickMilk();
-    let base: string = pickBase();
-    let flavor: string = pickFlavor();
-    let topping: string = pickTopping()
+    let base: string = pickRandom(bases);
+    let flavor: string = pickRandom(flavors);
+    let topping: string = pickRandom(toppings);
     let newBBT = new BBT(milk, base, flavor, topping);
 
 

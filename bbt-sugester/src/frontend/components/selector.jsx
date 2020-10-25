@@ -71,11 +71,17 @@ export class Selector extends React.Component {
     render() {
         return (
             <div className="body">
-      <DropDownComp moodProps={this.state.moodState} updateMood={this.updateMood.bind(this)}/>
-      <WeatherComp weatherProps={this.state.weatherState} updateLocation={this.updateLocation.bind(this)}/>
-      <BBTComp BBTProps={this.state.bbtState} findBBT={this.findBBT.bind(this)}/>
+                <DropDownComp 
+                    moodProps = {this.state.moodState} 
+                    updateMood={this.updateMood.bind(this)}/>
+                <WeatherComp 
+                    weatherProps={this.state.weatherState} 
+                    updateLocation={this.updateLocation.bind(this)}/>
+                <BBTComp 
+                    BBTProps={this.state.bbtState} 
+                    findBBT={this.findBBT.bind(this)}/>
 
-    </div>
+            </div>
         );
     }
     

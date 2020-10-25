@@ -33,9 +33,9 @@ export class WeatherComp extends React.Component {
                    );
 
                 } else {
-                    //defualt
-                    
-
+                    <div>
+                        cannot determine the area.
+                    </div>
                 }
 
         return ( 
